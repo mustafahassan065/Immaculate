@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery - Immaculate Professional Cleaning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .service-bg {
+            background: linear-gradient(rgba(255, 152, 0, 0.9), rgba(255, 193, 7, 0.9));
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF9800;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="h-12 w-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                    IPC
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-gray-800">Immaculate Professional Cleaning</h1>
+                    <p class="text-xs text-gray-600">We don't just clean — we transform!</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                <a href="services.html" class="nav-link text-gray-800 font-medium">Services</a>
+                <a href="gallery.html" class="nav-link active text-gray-800 font-medium">Gallery</a>
+                <a href="testimonials.html" class="nav-link text-gray-800 font-medium">Testimonials</a>
+                <a href="index.html#contact" class="nav-link text-gray-800 font-medium">Contact</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:+13476459040" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <button class="md:hidden text-gray-800" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-white shadow-lg py-4 hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 flex flex-col space-y-4">
+            <a href="index.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Home</a>
+            <a href="services.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Services</a>
+            <a href="gallery.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Gallery</a>
+            <a href="testimonials.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Testimonials</a>
+            <a href="index.html#contact" class="text-gray-800 font-medium py-2">Contact</a>
+        </div>
+    </div>
+
+    <!-- Gallery Page Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="service-bg text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Transformation Gallery</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">See the amazing before and after results of our professional cleaning services</p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Before & After Transformations</h2>
+                
+                <!-- Gallery Item 1 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 text-center mb-8">Construction Site Cleanup</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-red-500 text-white text-center font-bold">BEFORE</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Construction site filled with debris, dust, and leftover materials.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-green-500 text-white text-center font-bold">AFTER</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Completely transformed space ready for occupancy or next construction phase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 text-center mb-8">Window & Glass Cleaning</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-red-500 text-white text-center font-bold">BEFORE</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Windows covered in construction dust, paint splatters, and adhesive residues.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-green-500 text-white text-center font-bold">AFTER</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Crystal clear windows allowing maximum natural light and unobstructed views.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-gray-800 text-center mb-8">Floor Cleaning & Polishing</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-red-500 text-white text-center font-bold">BEFORE</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Floors covered in construction debris, dust, and stubborn stains.</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="p-4 bg-green-500 text-white text-center font-bold">AFTER</div>
+                            <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Spotless, polished floors that enhance the overall appearance of the space.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Images Grid -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">More Cleaning Transformations</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Image 1 -->
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Adhesive Residue Removal</h3>
+                                <p class="text-gray-600">Complete removal of stubborn adhesive residues from surfaces.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Image 2 -->
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596476558137-8a1c8c2f1151?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Pressure Washing</h3>
+                                <p class="text-gray-600">Exterior surfaces restored to their original condition.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Image 3 -->
+                        <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg gallery-item">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-4">
+                                <h3 class="text-lg font-bold text-gray-800 mb-2">Detailed Dusting</h3>
+                                <p class="text-gray-600">Every surface meticulously cleaned from floor to ceiling.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-orange-500 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for Your Transformation?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Let us transform your space with our professional cleaning services. Contact us today!</p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="tel:+13476459040" class="bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                    <a href="index.html#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                        Get Free Estimate
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as homepage) -->
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="h-10 w-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                            IPC
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold">Immaculate Professional Cleaning</h2>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">We don't just clean — we transform! Immaculate results. Every time.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Gallery</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Testimonials</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-orange-500 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#debris" class="text-gray-400 hover:text-orange-500 transition duration-300">Debris & Trash Removal</a></li>
+                        <li><a href="services.html#dusting" class="text-gray-400 hover:text-orange-500 transition duration-300">Floor-to-Ceiling Dusting</a></li>
+                        <li><a href="services.html#windows" class="text-gray-400 hover:text-orange-500 transition duration-300">Window & Glass Polishing</a></li>
+                        <li><a href="services.html#pressure" class="text-gray-400 hover:text-orange-500 transition duration-300">Pressure Washing</a></li>
+                        <li><a href="services.html#detailing" class="text-gray-400 hover:text-orange-500 transition duration-300">Final Touch Detailing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-orange-500 mt-1 mr-3"></i>
+                            <a href="tel:+13476459040" class="text-gray-400 hover:text-orange-500 transition duration-300">+1 347-645-9040</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-orange-500 mt-1 mr-3"></i>
+                            <a href="mailto:info@immaculatecleaning.com" class="text-gray-400 hover:text-orange-500 transition duration-300">info@immaculatecleaning.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">Midtown Manhattan & NYC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Immaculate Professional Cleaning Services LLC. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
