@@ -443,64 +443,90 @@
             return isValid;
         }
 
-        // Form submission
-        document.getElementById('agreementForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (validateForm()) {
-                // In a real implementation, you would send the form data to your server here
-                // For now, we'll just show a success message
-                
-                // Get form data
-                const formData = new FormData(this);
-                const signatureData = signaturePad.toDataURL(); // Get signature as base64
-                
-                console.log('Form submitted with data:', {
-                    firstName: formData.get('firstName'),
-                    lastName: formData.get('lastName'),
-                    email: formData.get('email'),
-                    phone: formData.get('phone'),
-                    address: formData.get('address'),
-                    serviceType: formData.get('serviceType'),
-                    serviceDate: formData.get('serviceDate'),
-                    serviceTime: formData.get('serviceTime'),
-                    specialInstructions: formData.get('specialInstructions'),
-                    signature: signatureData // This would be sent to your backend
-                });
-                
-                // Show success message
-                document.getElementById('successMessage').classList.remove('hidden');
-            }
-        });
+        
 
-        // Close success message
-        document.getElementById('closeSuccess').addEventListener('click', function() {
-            document.getElementById('successMessage').classList.add('hidden');
-            // Reset form
-            document.getElementById('agreementForm').reset();
+        // Form submission
+document.getElementById('agreementForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+        showNotification('Please fill all required fields correctly.', 'error');
+        return;
+    }
+    
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+    
+    // Show loading state
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Submitting Agreement...';
+    submitButton.disabled = true;
+    
+    try {
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: document.getElementById('address').value,
+            serviceType: document.getElementById('serviceType').value,
+            serviceDate: document.getElementById('serviceDate').value,
+            serviceTime: document.getElementById('serviceTime').value,
+            specialInstructions: document.getElementById('specialInstructions').value,
+            signature: signaturePad.toDataURL()
+        };
+        
+        const response = await fetch('/api/agreement', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            this.reset();
             signaturePad.clear();
             document.getElementById('signature-status').textContent = 'Signature required';
             document.getElementById('signature-status').classList.remove('text-green-500');
             document.getElementById('signature-status').classList.add('text-red-500');
-        });
+        } else {
+            showNotification(result.message, 'error');
+        }
+        
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('Failed to submit agreement. Please try again.', 'error');
+    } finally {
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+    }
+});
 
-        // Real-time validation for fields
-        const inputs = document.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('blur', function() {
-                if (this.hasAttribute('required') && !this.value) {
-                    this.classList.add('border-red-500');
-                } else {
-                    this.classList.remove('border-red-500');
-                }
-            });
-            
-            input.addEventListener('input', function() {
-                if (this.value) {
-                    this.classList.remove('border-red-500');
-                }
-            });
-        });
+// Add notification function to agreement.html as well
+function showNotification(message, type) {
+    const notification = document.createElement('div');
+    notification.className = `fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 ${
+        type === 'success' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+    }`;
+    notification.innerHTML = `
+        <div class="flex items-center">
+            <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
+            <span>${message}</span>
+        </div>
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remove notification after 5 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
     </script>
 </body>
 </html>
