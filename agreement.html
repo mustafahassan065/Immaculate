@@ -133,140 +133,129 @@
         </section>
 
         <!-- Agreement Form Section -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <!-- Single Form -->
-                <form id="agreementForm" class="space-y-6">
-                    <!-- Client Information Section -->
-                    <div class="form-section">
-                        <h2 class="form-section-title">Client Information</h2>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John">
-                            </div>
-                            <div>
-                                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Doe">
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-                            <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="(123) 456-7890">
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6">
-                            <label for="address" class="block text-gray-700 font-medium mb-2">Service Address *</label>
-                            <input type="text" id="address" name="address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="123 Main St, New York, NY">
-                        </div>
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Single Form -->
+        <form id="agreementForm" class="space-y-6">
+            <div id="formMessage" class="hidden p-4 rounded-lg mb-4"></div>
+            
+            <!-- Client Information Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">Client Information</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John">
                     </div>
-
-                    <!-- Service Details Section -->
-                    <div class="form-section">
-                        <h2 class="form-section-title">Service Details</h2>
-                        
-                        <div class="mb-6">
-                            <label for="serviceType" class="block text-gray-700 font-medium mb-2">Service Type *</label>
-                            <select id="serviceType" name="serviceType" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                                <option value="">Select a service</option>
-                                <option value="debris">Debris & Trash Removal</option>
-                                <option value="dusting">Floor-to-Ceiling Dusting</option>
-                                <option value="windows">Window & Glass Polishing</option>
-                                <option value="pressure">Pressure Washing</option>
-                                <option value="detailing">Final Touch Detailing</option>
-                                <option value="adhesive">Adhesive Residue Removal</option>
-                                <option value="duct">Air Duct & Filter Cleaning</option>
-                                <option value="sanitization">Sanitization</option>
-                                <option value="fixtures">Fixture & Appliance Cleaning</option>
-                                <option value="labor">Labor Services</option>
-                            </select>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="serviceDate" class="block text-gray-700 font-medium mb-2">Preferred Service Date *</label>
-                                <input type="date" id="serviceDate" name="serviceDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label for="serviceTime" class="block text-gray-700 font-medium mb-2">Preferred Time *</label>
-                                <select id="serviceTime" name="serviceTime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                                    <option value="">Select a time</option>
-                                    <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
-                                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
-                                    <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-6">
-                            <label for="specialInstructions" class="block text-gray-700 font-medium mb-2">Special Instructions</label>
-                            <textarea id="specialInstructions" name="specialInstructions" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Any special requirements or instructions..."></textarea>
-                        </div>
+                    <div>
+                        <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Doe">
                     </div>
-
-                    <!-- Contract & Signature Section -->
-                    <div class="form-section">
-                        <h2 class="form-section-title">Contract & Signature</h2>
-                        
-                        <div class="contract-terms mb-6">
-                            <h3 class="text-lg font-bold text-gray-800 mb-4">Service Agreement Terms & Conditions</h3>
-                            <p class="mb-4">This Agreement is made between Immaculate Professional Cleaning Services LLC ("Service Provider") and the client ("Client") for the provision of cleaning services as detailed below.</p>
-                            
-                            <h4 class="font-bold text-gray-800 mt-4 mb-2">1. Services</h4>
-                            <p class="mb-4">Service Provider agrees to provide the cleaning services selected by Client. All services will be performed in a professional and workmanlike manner.</p>
-                            
-                            <h4 class="font-bold text-gray-800 mt-4 mb-2">2. Payment Terms</h4>
-                            <p class="mb-4">Client agrees to pay the agreed-upon fee for services rendered. Payment is due upon completion of services unless otherwise arranged.</p>
-                            
-                            <h4 class="font-bold text-gray-800 mt-4 mb-2">3. Cancellation Policy</h4>
-                            <p class="mb-4">Client may cancel or reschedule services with at least 24 hours notice. Cancellations with less than 24 hours notice may incur a cancellation fee.</p>
-                            
-                            <h4 class="font-bold text-gray-800 mt-4 mb-2">4. Liability</h4>
-                            <p class="mb-4">Service Provider carries appropriate insurance for the services provided. Client agrees to provide a safe working environment for Service Provider's employees.</p>
-                            
-                            <h4 class="font-bold text-gray-800 mt-4 mb-2">5. Agreement</h4>
-                            <p class="mb-4">By signing below, Client acknowledges they have read, understood, and agree to all terms and conditions outlined in this agreement.</p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label class="flex items-start">
-                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-3 rounded focus:ring-orange-500 text-orange-600">
-                                <span class="text-gray-700">I have read and agree to the terms and conditions outlined in this service agreement *</span>
-                            </label>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <label class="block text-gray-700 font-medium mb-2">Digital Signature *</label>
-                            <p class="text-sm text-gray-600 mb-3">Please sign in the box below using your mouse or touchscreen</p>
-                            <div class="signature-pad-container">
-                                <canvas id="signature-pad" class="signature-pad w-full h-48"></canvas>
-                                <div class="flex justify-between mt-2">
-                                    <button type="button" id="clear-signature" class="text-sm text-red-500 hover:text-red-700">
-                                        <i class="fas fa-eraser mr-1"></i> Clear Signature
-                                    </button>
-                                    <span id="signature-status" class="text-sm text-gray-500">Signature required</span>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
                     </div>
-
-                    <!-- Submit Button -->
-                    <div class="flex justify-center mt-8">
-                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 flex items-center">
-                            <i class="fas fa-file-signature mr-3"></i> Submit Agreement
-                        </button>
+                    <div>
+                        <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="(123) 456-7890">
                     </div>
-                </form>
+                </div>
+                
+                <div class="mt-6">
+                    <label for="address" class="block text-gray-700 font-medium mb-2">Service Address *</label>
+                    <input type="text" id="address" name="address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="123 Main St, New York, NY">
+                </div>
             </div>
-        </section>
+
+            <!-- Service Details Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">Service Details</h2>
+                
+                <div class="mb-6">
+                    <label for="serviceType" class="block text-gray-700 font-medium mb-2">Service Type *</label>
+                    <select id="serviceType" name="serviceType" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        <option value="">Select a service</option>
+                        <option value="debris">Debris & Trash Removal</option>
+                        <option value="dusting">Floor-to-Ceiling Dusting</option>
+                        <option value="windows">Window & Glass Polishing</option>
+                        <option value="pressure">Pressure Washing</option>
+                        <option value="detailing">Final Touch Detailing</option>
+                        <option value="adhesive">Adhesive Residue Removal</option>
+                        <option value="duct">Air Duct & Filter Cleaning</option>
+                        <option value="sanitization">Sanitization</option>
+                        <option value="fixtures">Fixture & Appliance Cleaning</option>
+                        <option value="labor">Labor Services</option>
+                    </select>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="serviceDate" class="block text-gray-700 font-medium mb-2">Preferred Service Date *</label>
+                        <input type="date" id="serviceDate" name="serviceDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="serviceTime" class="block text-gray-700 font-medium mb-2">Preferred Time *</label>
+                        <select id="serviceTime" name="serviceTime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            <option value="">Select a time</option>
+                            <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                            <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                            <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <label for="specialInstructions" class="block text-gray-700 font-medium mb-2">Special Instructions</label>
+                    <textarea id="specialInstructions" name="specialInstructions" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Any special requirements or instructions..."></textarea>
+                </div>
+            </div>
+
+            <!-- Contract & Signature Section -->
+            <div class="form-section">
+                <h2 class="form-section-title">Contract & Signature</h2>
+                
+                <div class="contract-terms mb-6">
+                    <!-- Your existing terms content here -->
+                </div>
+                
+                <div class="mb-6">
+                    <label class="flex items-start">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-3 rounded focus:ring-orange-500 text-orange-600">
+                        <span class="text-gray-700">I have read and agree to the terms and conditions outlined in this service agreement *</span>
+                    </label>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Digital Signature *</label>
+                    <p class="text-sm text-gray-600 mb-3">Please sign in the box below using your mouse or touchscreen</p>
+                    <div class="signature-pad-container">
+                        <canvas id="signature-pad" class="signature-pad w-full h-48"></canvas>
+                        <div class="flex justify-between mt-2">
+                            <button type="button" id="clear-signature" class="text-sm text-red-500 hover:text-red-700">
+                                <i class="fas fa-eraser mr-1"></i> Clear Signature
+                            </button>
+                            <span id="signature-status" class="text-sm text-gray-500">Signature required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center mt-8">
+                <button type="submit" id="submitBtn" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 flex items-center">
+                    <span id="submitText">Submit Agreement</span>
+                    <div id="submitSpinner" class="hidden ml-2">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
 
         <!-- Success Message (Hidden by default) -->
         <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
@@ -360,6 +349,83 @@
             </div>
         </div>
     </footer>
+    <script>
+// Agreement Form Handling
+document.getElementById('agreementForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitSpinner = document.getElementById('submitSpinner');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (!validateForm()) {
+        return;
+    }
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitText.textContent = 'Submitting Agreement...';
+    submitSpinner.classList.remove('hidden');
+    formMessage.classList.add('hidden');
+    
+    try {
+        const signatureData = signaturePad.toDataURL();
+        
+        const formData = {
+            firstName: document.getElementById('firstName').value,
+            lastName: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            address: document.getElementById('address').value,
+            serviceType: document.getElementById('serviceType').value,
+            serviceDate: document.getElementById('serviceDate').value,
+            serviceTime: document.getElementById('serviceTime').value,
+            specialInstructions: document.getElementById('specialInstructions').value,
+            signature: signatureData
+        };
+        
+        const response = await fetch('/api/agreement', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Show success message
+            document.getElementById('successMessage').classList.remove('hidden');
+            formMessage.classList.add('hidden');
+        } else {
+            throw new Error(result.message);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        formMessage.textContent = 'Sorry, there was an error submitting your agreement. Please try again or call us directly.';
+        formMessage.classList.remove('hidden', 'bg-green-100', 'text-green-700', 'border-green-300');
+        formMessage.classList.add('bg-red-100', 'text-red-700', 'border', 'border-red-300');
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitText.textContent = 'Submit Agreement';
+        submitSpinner.classList.add('hidden');
+    }
+});
+
+// Close success message
+document.getElementById('closeSuccess').addEventListener('click', function() {
+    document.getElementById('successMessage').classList.add('hidden');
+    // Reset form
+    document.getElementById('agreementForm').reset();
+    signaturePad.clear();
+    document.getElementById('signature-status').textContent = 'Signature required';
+    document.getElementById('signature-status').classList.remove('text-green-500');
+    document.getElementById('signature-status').classList.add('text-red-500');
+});
+</script>
 
     <script>
         // Mobile menu toggle
