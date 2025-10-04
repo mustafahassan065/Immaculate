@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Immaculate Professional Cleaning Services LLC</title>
+    <title>Our Services - Immaculate Professional Cleaning</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -13,28 +13,8 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        .hero-bg {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-        
         .service-bg {
             background: linear-gradient(rgba(255, 152, 0, 0.9), rgba(255, 193, 7, 0.9));
-        }
-        
-        .testimonial-bg {
-            background: linear-gradient(rgba(33, 33, 33, 0.9), rgba(33, 33, 33, 0.9)), url('professional.webp');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .gallery-item {
-            transition: transform 0.3s ease;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.03);
         }
         
         .nav-link {
@@ -65,10 +45,10 @@
     <!-- Header -->
     <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center ">
-               <div class="rounded-full mr-3 overflow-hidden flex-shrink-0 w-20 h-20">
-    <img src="logo.jfif" class="w-full h-full object-cover" alt="Logo">
-  </div>
+            <div class="flex items-center">
+                <div class="h-20 w-20  rounded-full flex items-center justify-center text-white font-bold mr-3">
+                    <img src="logo.jfif" class="w-20 h-20 rounded-full object-cover">
+                </div>
                 <div>
                     <h1 class="text-xl font-bold text-gray-800">Immaculate Professional Cleaning Services LLC</h1>
                     <p class="text-xs text-gray-600">We don't just clean — we transform!</p>
@@ -77,10 +57,11 @@
             
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
-               <!-- <a href="#about" class="nav-link text-gray-800 font-medium">About</a>-->
-                <a href="services.html" class="nav-link text-gray-800 font-medium">Services</a>
+               <!--<a href="index.html#about" class="nav-link text-gray-800 font-medium">About</a>-->
+                <a href="services.html" class="nav-link active text-gray-800 font-medium">Services</a>
+        
                 <a href="testimonials.html" class="nav-link text-gray-800 font-medium">Testimonials</a>
-                <a href="#contact" class="nav-link text-gray-800 font-medium">Contact</a>
+                <a href="index.html#contact" class="nav-link text-gray-800 font-medium">Contact</a>
                 <a href="agreement.html" class="nav-link  text-gray-800 font-medium">Agreement</a>
             </nav>
             
@@ -99,382 +80,246 @@
     <div class="md:hidden bg-white shadow-lg py-4 hidden" id="mobileMenu">
         <div class="container mx-auto px-4 flex flex-col space-y-4">
             <a href="index.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Home</a>
-         <!--<a href="#about" class="text-gray-800 font-medium py-2 border-b border-gray-200">About</a>-->
+            <!--<a href="index.html#about" class="text-gray-800 font-medium py-2 border-b border-gray-200">About</a>-->
             <a href="services.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Services</a>
+            
             <a href="testimonials.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Testimonials</a>
-            <a href="#contact" class="text-gray-800 font-medium py-2">Contact</a>
+            <a href="index.html#contact" class="text-gray-800 font-medium py-2">Contact</a>
             <a href="agreement.html" class="text-gray-800 font-medium py-2">Agreement</a>
         </div>
     </div>
 
-    <!-- Homepage Content -->
-    <main id="homepage">
+    <!-- Services Page Content -->
+    <main>
         <!-- Hero Section -->
-        <section class="hero-bg text-white py-20 md:py-32">
+        <section class="service-bg text-white py-20">
             <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Post-Construction Cleaning Specialists</h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">We don't just clean — we transform! Immaculate results. Every time.</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Professional Services</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Comprehensive cleaning solutions for post-construction sites and commercial spaces</p>
+            </div>
+        </section>
+
+        <!-- Services Details -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <!-- Service 1 -->
+                <div id="debris" class="mb-20 scroll-mt-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Debris & Trash Removal</h2>
+                            <p class="text-gray-600 mb-4">Our comprehensive debris and trash removal service ensures your construction site is cleared of all waste materials, leaving a clean and safe environment.</p>
+                            <ul class="text-gray-600 mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Removal of construction debris and materials</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Proper disposal of hazardous materials</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Site clearing and preparation for next phase</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Eco-friendly disposal methods</span>
+                                </li>
+                            </ul>
+                            <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                                Request This Service
+                            </a>
+                        </div>
+                        <div class="h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('debris.jpg')"></div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div id="dusting" class="mb-20 scroll-mt-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('dusting.webp')"></div>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Floor-to-Ceiling Dusting</h2>
+                            <p class="text-gray-600 mb-4">Our meticulous dusting service eliminates construction dust from every surface, ensuring a pristine environment free of particulate matter.</p>
+                            <ul class="text-gray-600 mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Comprehensive dust removal from all surfaces</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>High-reach cleaning for ceilings and upper walls</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Detailed cleaning of ledges, fixtures, and fittings</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>HEPA filtration for air quality improvement</span>
+                                </li>
+                            </ul>
+                            <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                                Request This Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div id="windows" class="mb-20 scroll-mt-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Window & Glass Polishing</h2>
+                            <p class="text-gray-600 mb-4">We specialize in streak-free window and glass cleaning that enhances natural light and provides crystal-clear views.</p>
+                            <ul class="text-gray-600 mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Interior and exterior window cleaning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Removal of construction adhesives and residues</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Glass polishing for streak-free finish</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Frame and sill cleaning</span>
+                                </li>
+                            </ul>
+                            <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                                Request This Service
+                            </a>
+                        </div>
+                        <div class="h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div id="pressure" class="mb-20 scroll-mt-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="order-2 lg:order-1">
+                            <div class="h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('pressure.jpg')"></div>
+                        </div>
+                        <div class="order-1 lg:order-2">
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Pressure Washing</h2>
+                            <p class="text-gray-600 mb-4">Our high-pressure washing service effectively removes stubborn dirt, grime, and construction residues from exterior surfaces.</p>
+                            <ul class="text-gray-600 mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Exterior building surfaces cleaning</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Driveway and sidewalk pressure washing</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Removal of paint splatters and construction marks</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Eco-friendly cleaning solutions</span>
+                                </li>
+                            </ul>
+                            <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                                Request This Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 - Labor Services -->
+                <div id="labor" class="mb-20 scroll-mt-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-gray-800 mb-6">Labor Services</h2>
+                            <p class="text-gray-600 mb-4">Our skilled labor team provides reliable support for various construction and project needs, ensuring your job gets done efficiently and professionally.</p>
+                            <ul class="text-gray-600 mb-6 space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>General construction labor and support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Material handling and site preparation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Demolition and site clearing assistance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Equipment operation and maintenance support</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-orange-500 mt-1 mr-3"></i>
+                                    <span>Flexible staffing for project demands</span>
+                                </li>
+                            </ul>
+                            <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-block">
+                                Request This Service
+                            </a>
+                        </div>
+                        <div class="h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    </div>
+                </div>
+
+                <!-- Additional Services Grid -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-bold text-gray-800 text-center mb-12">Additional Services</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service 6 -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Final Touch Detailing</h3>
+                            <p class="text-gray-600 mb-4">Meticulous attention to every detail for a flawless finish.</p>
+                            <a href="index.html#contact" class="text-orange-500 font-medium hover:text-orange-600">Request Service →</a>
+                        </div>
+                        
+                        <!-- Service 7 -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('adhesive.jpg')"></div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Adhesive Residue Removal</h3>
+                            <p class="text-gray-600 mb-4">Professional removal of stickers, tapes, and adhesive residues.</p>
+                            <a href="index.html#contact" class="text-orange-500 font-medium hover:text-orange-600">Request Service →</a>
+                        </div>
+                        
+                        <!-- Service 8 -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <div class="h-48 bg-cover bg-center rounded-lg mb-4" style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Air Duct & Filter Cleaning</h3>
+                            <p class="text-gray-600 mb-4">Improve indoor air quality with professional duct cleaning.</p>
+                            <a href="index.html#contact" class="text-orange-500 font-medium hover:text-orange-600">Request Service →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-orange-500 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Space?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">Contact us today for a free estimate and let us handle your post-construction cleaning needs.</p>
                 <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                    <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                    <a href="tel:+13476459040" class="bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                        <i class="fas fa-phone mr-2"></i>Call Now
+                    </a>
+                    <a href="index.html#contact" class="bg-transparent border-2 border-white hover:bg-white hover:text-orange-500 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
                         Get Free Estimate
                     </a>
-                    <a href="services.html" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
-                        Our Services
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">About Us</h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Immaculate Professional Cleaning Services LLC is your trusted partner for post-construction cleanup. 
-                        We specialize in transforming construction sites into pristine, ready-to-use spaces. Our team of 
-                        professionals is dedicated to delivering exceptional results with meticulous attention to detail.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mb-4 mx-auto">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Licensed & Insured</h3>
-                            <p class="text-gray-600">Fully licensed and insured for your peace of mind.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mb-4 mx-auto">
-                                <i class="fas fa-file-contract"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Contract Agreements</h3>
-                            <p class="text-gray-600">All work done by formal contract agreement.</p>
-                        </div>
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
-                            <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-500 text-2xl mb-4 mx-auto">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Flexible Payments</h3>
-                            <p class="text-gray-600">We accept credit/debit cards for your convenience.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Preview -->
-        <section class="py-16 service-bg">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">Our Services</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="h-48 bg-cover bg-center" style="background-image: url('debris.jpg')"></div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Debris & Trash Removal</h3>
-                            <p class="text-gray-600 mb-4">Complete removal of construction debris and trash from your site.</p>
-                            <a href="services.html#debris" class="text-orange-500 font-medium hover:text-orange-600">Learn More →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Service 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80')"></div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Floor-to-Ceiling Dusting</h3>
-                            <p class="text-gray-600 mb-4">Thorough dust removal from all surfaces, floors to ceilings.</p>
-                            <a href="services.html#dusting" class="text-orange-500 font-medium hover:text-orange-600">Learn More →</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Service 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <div class="h-48 bg-cover bg-center" style="background-image: url('pressure.jpg')"></div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-gray-800 mb-2">Pressure Washing</h3>
-                            <p class="text-gray-600 mb-4">High-pressure cleaning for exterior surfaces and hard-to-clean areas.</p>
-                            <a href="services.html#pressure" class="text-orange-500 font-medium hover:text-orange-600">Learn More →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="services.html" class="bg-white text-orange-500 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
-                        View All Services
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us -->
-        <section class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Why Choose Us</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Licensed & Insured</h3>
-                                <p class="text-gray-600">We are fully licensed and insured, providing you with peace of mind and protection.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Contract Agreements</h3>
-                                <p class="text-gray-600">All our work is performed under formal contract agreements, ensuring clarity and accountability.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Flexible Payment Options</h3>
-                                <p class="text-gray-600">We accept credit and debit cards, making payment convenient for our clients.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Flexible Scheduling</h3>
-                                <p class="text-gray-600">We work around your schedule to minimize disruption to your project timeline.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Trusted by Contractors & Homeowners</h3>
-                                <p class="text-gray-600">We have built a reputation for excellence among both contractors and homeowners.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start mb-6">
-                            <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-check text-orange-500"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-gray-800 mb-2">Attention to Detail</h3>
-                                <p class="text-gray-600">We pay meticulous attention to every detail, ensuring immaculate results every time.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       
-
-        <!-- Testimonials Preview -->
-        <section class="py-16 testimonial-bg text-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                                JD
-                            </div>
-                            <div>
-                                <h3 class="font-bold">John D.</h3>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic">"Immaculate transformed our construction site into a spotless space. Their attention to detail is remarkable!"</p>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                                SR
-                            </div>
-                            <div>
-                                <h3 class="font-bold">Sarah R.</h3>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic">"Professional, efficient, and thorough. I highly recommend Immaculate for any post-construction cleaning needs."</p>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                                MT
-                            </div>
-                            <div>
-                                <h3 class="font-bold">Mike T.</h3>
-                                <div class="flex text-yellow-400">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="italic">"As a contractor, I rely on Immaculate for all my post-construction cleanup. They never disappoint!"</p>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <a href="testimonials.html" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
-                        Read More Testimonials
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">Contact Us</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h3>
-                        
-                        <div class="mb-8">
-                            <div class="flex items-start mb-6">
-                                <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-phone text-orange-500"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold text-gray-800">Phone</h4>
-                                    <a href="tel:+13476459040" class="text-gray-600 hover:text-orange-500">+1 347-645-9040</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start mb-6">
-                                <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-orange-500"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold text-gray-800">Email</h4>
-                                    <a href="mailto:info@immaculatecleaning.com" class="text-gray-600 hover:text-orange-500">info@immaculatecleaning.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-orange-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-orange-500"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-lg font-bold text-gray-800">Service Areas</h4>
-                                    <p class="text-gray-600">Manhattan,
-Brooklyn,
-Queens,
-The Bronx and
-Staten Island</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-6 text-center">
-            <img src="flyer1.jpg" alt="QR Code" class="mx-auto w-32 h-32">
-            <p class="text-gray-400 mt-2">SCAN THE QR CODE TO SEND US AN EMAIL</p>
-        </div>
-                        
-                        <div class="bg-gray-100 p-6 rounded-lg">
-                            <h4 class="text-lg font-bold text-gray-800 mb-4">Business Hours</h4>
-                            <div class="flex justify-between border-b border-gray-300 py-2">
-                                <span class="text-gray-600">Monday - Friday</span>
-                                <span class="font-medium">8:00 AM - 6:00 PM</span>
-                            </div>
-                            <div class="flex justify-between border-b border-gray-300 py-2">
-                                <span class="text-gray-600">Saturday</span>
-                                <span class="font-medium">9:00 AM - 4:00 PM</span>
-                            </div>
-                            <div class="flex justify-between py-2">
-                                <span class="text-gray-600">Sunday</span>
-                                <span class="font-medium">Emergency Only</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Request a Free Estimate</h3>
-                        
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div>
-                                    <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
-                                    <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="(123) 456-7890">
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
-                            </div>
-                            
-                            <div>
-                                <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
-                                <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
-                                    <option value="">Select a service</option>
-                                    <option value="debris">Debris & Trash Removal</option>
-                                    <option value="dusting">Floor-to-Ceiling Dusting</option>
-                                    <option value="windows">Window & Glass Polishing</option>
-                                    <option value="pressure">Pressure Washing</option>
-                                    <option value="detailing">Final Touch Detailing</option>
-                                    <option value="adhesive">Adhesive Residue Removal</option>
-                                    <option value="duct">Air Duct & Filter Cleaning</option>
-                                    <option value="sanitization">Sanitization</option>
-                                    <option value="fixtures">Fixture & Appliance Cleaning</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-gray-700 font-medium mb-2">Project Details</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-lg font-bold text-lg transition duration-300">
-                                Request Free Estimate
-                            </button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (Same as homepage) -->
     <footer class="bg-gray-800 text-white pt-12 pb-8">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -507,9 +352,9 @@ Staten Island</p>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Home</a></li>
                         <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Services</a></li>
-                       
+                        
                         <li><a href="testimonials.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-orange-500 transition duration-300">Contact</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-orange-500 transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 
@@ -520,7 +365,7 @@ Staten Island</p>
                         <li><a href="services.html#dusting" class="text-gray-400 hover:text-orange-500 transition duration-300">Floor-to-Ceiling Dusting</a></li>
                         <li><a href="services.html#windows" class="text-gray-400 hover:text-orange-500 transition duration-300">Window & Glass Polishing</a></li>
                         <li><a href="services.html#pressure" class="text-gray-400 hover:text-orange-500 transition duration-300">Pressure Washing</a></li>
-                        <li><a href="services.html#detailing" class="text-gray-400 hover:text-orange-500 transition duration-300">Final Touch Detailing</a></li>
+                        <li><a href="services.html#labor" class="text-gray-400 hover:text-orange-500 transition duration-300">Labor Services</a></li>
                     </ul>
                 </div>
                 
@@ -563,49 +408,7 @@ Staten Island</span>
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('hidden');
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.getElementById('mobileMenu').classList.add('hidden');
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if(scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if(link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
     </script>
 </body>
 </html>
+
