@@ -1,1 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Agreement - Immaculate Professional Cleaning Services LLC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .service-bg {
+            background: linear-gradient(rgba(255, 152, 0, 0.9), rgba(255, 193, 7, 0.9));
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #FF9800;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .signature-pad {
+            border: 2px dashed #d1d5db;
+            border-radius: 0.5rem;
+            background-color: #f9fafb;
+            cursor: crosshair;
+        }
+        
+        .contract-terms {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            background-color: #f9fafb;
+        }
+        
+        .form-section {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .form-section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f3f4f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="rounded-full mr-3 overflow-hidden flex-shrink-0 w-20 h-20">
+                    <img src="logo.jfif" class="w-full h-full object-cover" alt="Logo">
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-gray-800">Immaculate Professional Cleaning Services LLC</h1>
+                    <p class="text-xs text-gray-600">We don't just clean — we transform!</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-gray-800 font-medium">Home</a>
+                
+                <a href="services.html" class="nav-link text-gray-800 font-medium">Services</a>
+                <a href="testimonials.html" class="nav-link text-gray-800 font-medium">Testimonials</a>
+                <a href="index.html#contact" class="nav-link text-gray-800 font-medium">Contact</a>
+                <a href="agreement.html" class="nav-link active text-gray-800 font-medium">Agreement</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <a href="tel:+13476459040" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-medium transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <button class="md:hidden text-gray-800" id="mobileMenuButton">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden bg-white shadow-lg py-4 hidden" id="mobileMenu">
+        <div class="container mx-auto px-4 flex flex-col space-y-4">
+            <a href="index.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Home</a>
+            <!--<a href="index.html#about" class="text-gray-800 font-medium py-2 border-b border-gray-200">About</a>-->
+            <a href="services.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Services</a>
+            <a href="testimonials.html" class="text-gray-800 font-medium py-2 border-b border-gray-200">Testimonials</a>
+            <a href="index.html#contact" class="text-gray-800 font-medium py-2 border-b border-gray-200">Contact</a>
+            <a href="agreement.html" class="text-gray-800 font-medium py-2">Agreement</a>
+        </div>
+    </div>
+
+    <!-- Agreement Page Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="service-bg text-white py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Service Agreement</h1>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">Complete the form below to sign our service agreement</p>
+            </div>
+        </section>
+
+        <!-- Agreement Form Section -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <!-- Single Form -->
+                <form id="agreementForm" class="space-y-6">
+                    <!-- Client Information Section -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">Client Information</h2>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-gray-700 font-medium mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="John">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-gray-700 font-medium mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Doe">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="(123) 456-7890">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label for="address" class="block text-gray-700 font-medium mb-2">Service Address *</label>
+                            <input type="text" id="address" name="address" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="123 Main St, New York, NY">
+                        </div>
+                    </div>
+
+                    <!-- Service Details Section -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">Service Details</h2>
+                        
+                        <div class="mb-6">
+                            <label for="serviceType" class="block text-gray-700 font-medium mb-2">Service Type *</label>
+                            <select id="serviceType" name="serviceType" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                                <option value="">Select a service</option>
+                                <option value="debris">Debris & Trash Removal</option>
+                                <option value="dusting">Floor-to-Ceiling Dusting</option>
+                                <option value="windows">Window & Glass Polishing</option>
+                                <option value="pressure">Pressure Washing</option>
+                                <option value="detailing">Final Touch Detailing</option>
+                                <option value="adhesive">Adhesive Residue Removal</option>
+                                <option value="duct">Air Duct & Filter Cleaning</option>
+                                <option value="sanitization">Sanitization</option>
+                                <option value="fixtures">Fixture & Appliance Cleaning</option>
+                                <option value="labor">Labor Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="serviceDate" class="block text-gray-700 font-medium mb-2">Preferred Service Date *</label>
+                                <input type="date" id="serviceDate" name="serviceDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="serviceTime" class="block text-gray-700 font-medium mb-2">Preferred Time *</label>
+                                <select id="serviceTime" name="serviceTime" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                                    <option value="">Select a time</option>
+                                    <option value="morning">Morning (8:00 AM - 12:00 PM)</option>
+                                    <option value="afternoon">Afternoon (12:00 PM - 4:00 PM)</option>
+                                    <option value="evening">Evening (4:00 PM - 6:00 PM)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label for="specialInstructions" class="block text-gray-700 font-medium mb-2">Special Instructions</label>
+                            <textarea id="specialInstructions" name="specialInstructions" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Any special requirements or instructions..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Contract & Signature Section -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">Contract & Signature</h2>
+                        
+                        <div class="contract-terms mb-6">
+                            <h3 class="text-lg font-bold text-gray-800 mb-4">Service Agreement Terms & Conditions</h3>
+                            <p class="mb-4">This Agreement is made between Immaculate Professional Cleaning Services LLC ("Service Provider") and the client ("Client") for the provision of cleaning services as detailed below.</p>
+                            
+                            <h4 class="font-bold text-gray-800 mt-4 mb-2">1. Services</h4>
+                            <p class="mb-4">Service Provider agrees to provide the cleaning services selected by Client. All services will be performed in a professional and workmanlike manner.</p>
+                            
+                            <h4 class="font-bold text-gray-800 mt-4 mb-2">2. Payment Terms</h4>
+                            <p class="mb-4">Client agrees to pay the agreed-upon fee for services rendered. Payment is due upon completion of services unless otherwise arranged.</p>
+                            
+                            <h4 class="font-bold text-gray-800 mt-4 mb-2">3. Cancellation Policy</h4>
+                            <p class="mb-4">Client may cancel or reschedule services with at least 24 hours notice. Cancellations with less than 24 hours notice may incur a cancellation fee.</p>
+                            
+                            <h4 class="font-bold text-gray-800 mt-4 mb-2">4. Liability</h4>
+                            <p class="mb-4">Service Provider carries appropriate insurance for the services provided. Client agrees to provide a safe working environment for Service Provider's employees.</p>
+                            
+                            <h4 class="font-bold text-gray-800 mt-4 mb-2">5. Agreement</h4>
+                            <p class="mb-4">By signing below, Client acknowledges they have read, understood, and agree to all terms and conditions outlined in this agreement.</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="flex items-start">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required class="mt-1 mr-3 rounded focus:ring-orange-500 text-orange-600">
+                                <span class="text-gray-700">I have read and agree to the terms and conditions outlined in this service agreement *</span>
+                            </label>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Digital Signature *</label>
+                            <p class="text-sm text-gray-600 mb-3">Please sign in the box below using your mouse or touchscreen</p>
+                            <div class="signature-pad-container">
+                                <canvas id="signature-pad" class="signature-pad w-full h-48"></canvas>
+                                <div class="flex justify-between mt-2">
+                                    <button type="button" id="clear-signature" class="text-sm text-red-500 hover:text-red-700">
+                                        <i class="fas fa-eraser mr-1"></i> Clear Signature
+                                    </button>
+                                    <span id="signature-status" class="text-sm text-gray-500">Signature required</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="flex justify-center mt-8">
+                        <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 flex items-center">
+                            <i class="fas fa-file-signature mr-3"></i> Submit Agreement
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Success Message (Hidden by default) -->
+        <div id="successMessage" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+            <div class="bg-white rounded-lg p-8 max-w-md mx-4 text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-500 text-2xl mb-4 mx-auto">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Agreement Submitted!</h3>
+                <p class="text-gray-600 mb-6">Thank you for completing the service agreement. We will contact you shortly to confirm your booking.</p>
+                <button id="closeSuccess" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-medium transition duration-300">
+                    Close
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div>
+                            <h2 class="text-xl font-bold">Immaculate Professional Cleaning Services LLC</h2>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">We don't just clean — we transform! Immaculate results. Every time.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-gray-700 hover:bg-orange-500 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Services</a></li>
+                        <li><a href="testimonials.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Testimonials</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-orange-500 transition duration-300">Contact</a></li>
+                        <li><a href="agreement.html" class="text-gray-400 hover:text-orange-500 transition duration-300">Agreement</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html#debris" class="text-gray-400 hover:text-orange-500 transition duration-300">Debris & Trash Removal</a></li>
+                        <li><a href="services.html#dusting" class="text-gray-400 hover:text-orange-500 transition duration-300">Floor-to-Ceiling Dusting</a></li>
+                        <li><a href="services.html#windows" class="text-gray-400 hover:text-orange-500 transition duration-300">Window & Glass Polishing</a></li>
+                        <li><a href="services.html#pressure" class="text-gray-400 hover:text-orange-500 transition duration-300">Pressure Washing</a></li>
+                        <li><a href="services.html#labor" class="text-gray-400 hover:text-orange-500 transition duration-300">Labor Services</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-orange-500 mt-1 mr-3"></i>
+                            <a href="tel:+13476459040" class="text-gray-400 hover:text-orange-500 transition duration-300">+1 347-645-9040</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-orange-500 mt-1 mr-3"></i>
+                            <a href="mailto:info@immaculatecleaning.com" class="text-gray-400 hover:text-orange-500 transition duration-300">info@immaculatecleaning.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">Manhattan, Brooklyn, Queens, The Bronx and Staten Island</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2020 Immaculate Professional Cleaning Services LLC. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 text-sm transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Signature Pad functionality
+        const canvas = document.getElementById('signature-pad');
+        const signaturePad = new SignaturePad(canvas, {
+            backgroundColor: 'rgb(255, 255, 255)',
+            penColor: 'rgb(0, 0, 0)'
+        });
+
+        // Adjust canvas size for better rendering
+        function resizeCanvas() {
+            const ratio = Math.max(window.devicePixelRatio || 1, 1);
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
+            canvas.getContext("2d").scale(ratio, ratio);
+            signaturePad.clear(); // Clear the signature pad when resizing
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Clear signature button
+        document.getElementById('clear-signature').addEventListener('click', function() {
+            signaturePad.clear();
+            document.getElementById('signature-status').textContent = 'Signature required';
+            document.getElementById('signature-status').classList.remove('text-green-500');
+            document.getElementById('signature-status').classList.add('text-red-500');
+        });
+
+        // Update signature status when user signs
+        signaturePad.addEventListener('endStroke', function() {
+            if (!signaturePad.isEmpty()) {
+                document.getElementById('signature-status').textContent = 'Signature provided';
+                document.getElementById('signature-status').classList.remove('text-red-500');
+                document.getElementById('signature-status').classList.add('text-green-500');
+            }
+        });
+
+        // Form validation
+        function validateForm() {
+            let isValid = true;
+            
+            // Check required fields
+            const requiredFields = document.querySelectorAll('input[required], select[required]');
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+            
+            // Check terms agreement
+            const termsChecked = document.getElementById('agreeTerms').checked;
+            if (!termsChecked) {
+                document.getElementById('agreeTerms').classList.add('border', 'border-red-500');
+                isValid = false;
+            } else {
+                document.getElementById('agreeTerms').classList.remove('border', 'border-red-500');
+            }
+            
+            // Check signature
+            const signatureEmpty = signaturePad.isEmpty();
+            if (signatureEmpty) {
+                document.getElementById('signature-status').textContent = 'Signature required';
+                document.getElementById('signature-status').classList.add('text-red-500');
+                isValid = false;
+            } else {
+                document.getElementById('signature-status').textContent = 'Signature provided';
+                document.getElementById('signature-status').classList.remove('text-red-500');
+                document.getElementById('signature-status').classList.add('text-green-500');
+            }
+            
+            return isValid;
+        }
+
+        // Form submission
+        document.getElementById('agreementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm()) {
+                // In a real implementation, you would send the form data to your server here
+                // For now, we'll just show a success message
+                
+                // Get form data
+                const formData = new FormData(this);
+                const signatureData = signaturePad.toDataURL(); // Get signature as base64
+                
+                console.log('Form submitted with data:', {
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    address: formData.get('address'),
+                    serviceType: formData.get('serviceType'),
+                    serviceDate: formData.get('serviceDate'),
+                    serviceTime: formData.get('serviceTime'),
+                    specialInstructions: formData.get('specialInstructions'),
+                    signature: signatureData // This would be sent to your backend
+                });
+                
+                // Show success message
+                document.getElementById('successMessage').classList.remove('hidden');
+            }
+        });
+
+        // Close success message
+        document.getElementById('closeSuccess').addEventListener('click', function() {
+            document.getElementById('successMessage').classList.add('hidden');
+            // Reset form
+            document.getElementById('agreementForm').reset();
+            signaturePad.clear();
+            document.getElementById('signature-status').textContent = 'Signature required';
+            document.getElementById('signature-status').classList.remove('text-green-500');
+            document.getElementById('signature-status').classList.add('text-red-500');
+        });
+
+        // Real-time validation for fields
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value) {
+                    this.classList.add('border-red-500');
+                } else {
+                    this.classList.remove('border-red-500');
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.value) {
+                    this.classList.remove('border-red-500');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
