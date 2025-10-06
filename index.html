@@ -555,8 +555,9 @@ Staten Island</span>
         </div>
     </footer>
 
-    <script>
-// Contact Form Handling - Fixed Version
+    <!-- Contact Form JavaScript -->
+<script>
+// Contact Form Handling
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     
@@ -573,19 +574,15 @@ document.getElementById('contactForm').addEventListener('submit', async function
     
     try {
         const formData = {
-            name: document.getElementById('name').value,
-            phone: document.getElementById('phone').value,
+            firstName: document.getElementById('name').value.split(' ')[0],
+            lastName: document.getElementById('name').value.split(' ').slice(1).join(' ') || '',
             email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
             service: document.getElementById('service').value,
             message: document.getElementById('message').value
         };
         
-        // API URL - Vercel deployment ke liye
-        const apiUrl = window.location.hostname === 'localhost' 
-            ? 'http://localhost:3000/api/contact' 
-            : '/api/contact';
-        
-        const response = await fetch(apiUrl, {
+        const response = await fetch('/api/sendMail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -593,20 +590,15 @@ document.getElementById('contactForm').addEventListener('submit', async function
             body: JSON.stringify(formData)
         });
         
-        let result;
-        try {
-            result = await response.json();
-        } catch (jsonError) {
-            throw new Error('Server returned invalid response');
-        }
+        const data = await response.json();
         
-        if (result.success) {
-            formMessage.textContent = result.message || 'Thank you! Your message has been sent successfully.';
+        if (data.success) {
+            formMessage.textContent = data.message || 'Thank you! Your message has been sent successfully.';
             formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'border-red-300');
             formMessage.classList.add('bg-green-100', 'text-green-700', 'border', 'border-green-300');
             document.getElementById('contactForm').reset();
         } else {
-            throw new Error(result.message || 'Failed to submit form');
+            throw new Error(data.error || 'Failed to submit form');
         }
     } catch (error) {
         console.error('Error:', error);
@@ -743,6 +735,7 @@ function showNotification(message, type) {
     </script>
 </body>
 </html>
+
 
 
 
