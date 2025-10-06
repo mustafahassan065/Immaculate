@@ -5,9 +5,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { firstName, lastName, email, phone, service, message } = req.body;
+  const { name, email, phone, service, message } = req.body;
 
-  if (!firstName || !lastName || !email || !message) {
+  if (!name || !email || !message) {
     return res.status(400).json({ error: "Missing required fields" });
   }
 
@@ -24,9 +24,9 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from: process.env.MAIL_USER,
       to: "everythingimmaculate456@gmail.com",
-      subject: `New Service Request from ${firstName} ${lastName}`,
+      subject: `New Service Request from ${name}`,
       text: `
-        Name: ${firstName} ${lastName}
+        Name: ${name}
         Email: ${email}
         Phone: ${phone}
         Service: ${service}
