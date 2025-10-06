@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { firstName, lastName, email, phone, service, message } = req.body;
+  const { name, email, phone, service, message } = req.body;
 
   try {
     // ✅ Stable Gmail SMTP transport (instead of service: "gmail")
