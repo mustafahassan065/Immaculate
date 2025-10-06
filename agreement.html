@@ -207,6 +207,14 @@
                         </select>
                     </div>
                 </div>
+                <!-- Add this inside Service Details section, below Preferred Time -->
+<div class="mt-6">
+  <label for="neededWorkers" class="block text-gray-700 font-medium mb-2">Needed Workers *</label>
+  <input type="number" id="neededWorkers" name="neededWorkers" required min="1"
+    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+    placeholder="Enter number of workers required">
+</div>
+
                 
                 <div class="mt-6">
                     <label for="specialInstructions" class="block text-gray-700 font-medium mb-2">Special Instructions</label>
@@ -385,7 +393,7 @@ document.getElementById('agreementForm').addEventListener('submit', async functi
             signature: signatureData
         };
         
-        const response = await fetch('/api/agreement', {
+        const response = await fetch('/api/agreementMail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -537,11 +545,12 @@ document.getElementById('agreementForm').addEventListener('submit', async functi
             serviceType: document.getElementById('serviceType').value,
             serviceDate: document.getElementById('serviceDate').value,
             serviceTime: document.getElementById('serviceTime').value,
+            neededWorkers: document.getElementById('neededWorkers').value,
             specialInstructions: document.getElementById('specialInstructions').value,
             signature: signaturePad.toDataURL()
         };
         
-        const response = await fetch('/api/agreement', {
+        const response = await fetch('/api/agreementMail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
