@@ -1,45 +1,42 @@
-// api/sendMail.js
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, phone, service, message } = req.body;
+  const { firstName, lastName, email, phone, service, message } = req.body;
+
+  if (!firstName || !lastName || !email || !message) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  // ✅ Use environment variables (set these in Vercel dashboard)
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.MAIL_USER, // your Gmail
+      pass: process.env.MAIL_PASS, // your App Password
+    },
+  });
 
   try {
-    // ✅ Stable Gmail SMTP transport
-    let transporter = nodemailer.createTransporter({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // use SSL
-      auth: {
-        user: "mustafaprogrammer786@gmail.com",
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
     await transporter.sendMail({
-      from: `"Immaculate Cleaning Website" <everythingimmaculate456@gmail.com>`,
+      from: process.env.MAIL_USER,
       to: "everythingimmaculate456@gmail.com",
-      subject: "New Contact Form Submission",
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Service:</b> ${service}</p>
-        <p><b>Message:</b> ${message || 'No message provided'}</p>
-        <p><b>Submission Time:</b> ${new Date().toLocaleString()}</p>
-        <hr>
-        <p><em>Sent from Immaculate Professional Cleaning Services Website</em></p>
+      subject: `New Service Request from ${firstName} ${lastName}`,
+      text: `
+        Name: ${firstName} ${lastName}
+        Email: ${email}
+        Phone: ${phone}
+        Service: ${service}
+        Message: ${message}
       `,
     });
 
-    res.status(200).json({ success: true, message: "Contact form submitted successfully! We will get back to you soon." });
-  } catch (err) {
-    console.error("Email error:", err);
-    res.status(500).json({ error: "Failed to send email. Please try again later." });
+    return res.status(200).json({ success: true, message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Email send error:", error);
+    return res.status(500).json({ success: false, error: "Failed to send email. Please try again later." });
   }
-};
+}
