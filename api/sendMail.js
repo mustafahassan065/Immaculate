@@ -1,22 +1,22 @@
 // api/sendMail.js
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { firstName, lastName, email, phone, service, message } = req.body;
+  const { name, email, phone, service, message } = req.body;
 
   try {
-    // ✅ Stable Gmail SMTP transport (instead of service: "gmail")
+    // ✅ Stable Gmail SMTP transport
     let transporter = nodemailer.createTransporter({
       host: "smtp.gmail.com",
       port: 465,
       secure: true, // use SSL
       auth: {
-        user: "everythingimmaculate456@gmail.com",
-        pass: process.env.GMAIL_APP_PASSWORD, // App password from Google
+        user: "mustafaprogrammer786@gmail.com",
+        pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
 
@@ -26,19 +26,20 @@ export default async function handler(req, res) {
       subject: "New Contact Form Submission",
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><b>Name:</b> ${firstName} ${lastName}</p>
+        <p><b>Name:</b> ${name}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Service:</b> ${service}</p>
-        <p><b>Message:</b> ${message}</p>
+        <p><b>Message:</b> ${message || 'No message provided'}</p>
+        <p><b>Submission Time:</b> ${new Date().toLocaleString()}</p>
         <hr>
         <p><em>Sent from Immaculate Professional Cleaning Services Website</em></p>
       `,
     });
 
-    res.status(200).json({ success: true, message: "Email sent successfully!" });
+    res.status(200).json({ success: true, message: "Contact form submitted successfully! We will get back to you soon." });
   } catch (err) {
     console.error("Email error:", err);
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: "Failed to send email. Please try again later." });
   }
-}
+};
